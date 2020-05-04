@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		502993B2245ED35000ABB068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502993B1245ED35000ABB068 /* AppDelegate.swift */; };
-		502993B4245ED35000ABB068 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502993B3245ED35000ABB068 /* SceneDelegate.swift */; };
 		502993B6245ED35000ABB068 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502993B5245ED35000ABB068 /* ViewController.swift */; };
 		502993B9245ED35000ABB068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502993B7245ED35000ABB068 /* Main.storyboard */; };
 		502993BB245ED35500ABB068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502993BA245ED35500ABB068 /* Assets.xcassets */; };
 		502993BE245ED35500ABB068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502993BC245ED35500ABB068 /* LaunchScreen.storyboard */; };
+		502993C9245ED37800ABB068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502993C7245ED37800ABB068 /* AppDelegate.swift */; };
+		502993CA245ED37800ABB068 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502993C8245ED37800ABB068 /* SceneDelegate.swift */; };
+		50359A80245FC8BF00F48836 /* ServiceInteractionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A7F245FC8BF00F48836 /* ServiceInteractionHandler.swift */; };
+		50359A82245FC8F000F48836 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A81245FC8F000F48836 /* NetworkReachability.swift */; };
+		50359A84245FC92B00F48836 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A83245FC92B00F48836 /* ActivityIndicator.swift */; };
+		50359A86245FC96300F48836 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A85245FC96300F48836 /* Constants.swift */; };
+		50359A89245FF59400F48836 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A88245FF59400F48836 /* PostModel.swift */; };
+		50359A8B245FF59F00F48836 /* GetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A8A245FF59F00F48836 /* GetModel.swift */; };
+		50359A8D245FF63400F48836 /* PutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A8C245FF63400F48836 /* PutModel.swift */; };
+		50359A8F245FF98B00F48836 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A8E245FF98B00F48836 /* DeleteModel.swift */; };
+		504A8659245EDB65000F720B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A8658245EDB65000F720B /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		502993AE245ED35000ABB068 /* API Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		502993B1245ED35000ABB068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		502993B3245ED35000ABB068 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		502993B5245ED35000ABB068 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		502993B8245ED35000ABB068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		502993BA245ED35500ABB068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		502993BD245ED35500ABB068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		502993BF245ED35500ABB068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		502993C7245ED37800ABB068 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		502993C8245ED37800ABB068 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		50359A7F245FC8BF00F48836 /* ServiceInteractionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInteractionHandler.swift; sourceTree = "<group>"; };
+		50359A81245FC8F000F48836 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		50359A83245FC92B00F48836 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		50359A85245FC96300F48836 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50359A88245FF59400F48836 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		50359A8A245FF59F00F48836 /* GetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetModel.swift; sourceTree = "<group>"; };
+		50359A8C245FF63400F48836 /* PutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutModel.swift; sourceTree = "<group>"; };
+		50359A8E245FF98B00F48836 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
+		504A8658245EDB65000F720B /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,72 @@
 		502993B0245ED35000ABB068 /* API Master */ = {
 			isa = PBXGroup;
 			children = (
-				502993B1245ED35000ABB068 /* AppDelegate.swift */,
-				502993B3245ED35000ABB068 /* SceneDelegate.swift */,
-				502993B5245ED35000ABB068 /* ViewController.swift */,
-				502993B7245ED35000ABB068 /* Main.storyboard */,
-				502993BA245ED35500ABB068 /* Assets.xcassets */,
-				502993BC245ED35500ABB068 /* LaunchScreen.storyboard */,
+				502993CE245ED3C000ABB068 /* Helpers */,
+				502993CD245ED3B700ABB068 /* Handler */,
+				502993C6245ED37800ABB068 /* Delegates */,
+				502993CB245ED39000ABB068 /* View Controller */,
+				502993CC245ED3A600ABB068 /* Resources */,
 				502993BF245ED35500ABB068 /* Info.plist */,
+				50359A85245FC96300F48836 /* Constants.swift */,
 			);
 			path = "API Master";
+			sourceTree = "<group>";
+		};
+		502993C6245ED37800ABB068 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				502993C7245ED37800ABB068 /* AppDelegate.swift */,
+				502993C8245ED37800ABB068 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		502993CB245ED39000ABB068 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50359A87245FF58300F48836 /* Model */,
+				502993B5245ED35000ABB068 /* ViewController.swift */,
+				502993B7245ED35000ABB068 /* Main.storyboard */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		502993CC245ED3A600ABB068 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				502993BA245ED35500ABB068 /* Assets.xcassets */,
+				502993BC245ED35500ABB068 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		502993CD245ED3B700ABB068 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				50359A7F245FC8BF00F48836 /* ServiceInteractionHandler.swift */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		502993CE245ED3C000ABB068 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				504A8658245EDB65000F720B /* Toast.swift */,
+				50359A81245FC8F000F48836 /* NetworkReachability.swift */,
+				50359A83245FC92B00F48836 /* ActivityIndicator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		50359A87245FF58300F48836 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50359A88245FF59400F48836 /* PostModel.swift */,
+				50359A8A245FF59F00F48836 /* GetModel.swift */,
+				50359A8C245FF63400F48836 /* PutModel.swift */,
+				50359A8E245FF98B00F48836 /* DeleteModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +213,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50359A8B245FF59F00F48836 /* GetModel.swift in Sources */,
+				502993C9245ED37800ABB068 /* AppDelegate.swift in Sources */,
+				50359A8D245FF63400F48836 /* PutModel.swift in Sources */,
+				50359A89245FF59400F48836 /* PostModel.swift in Sources */,
+				50359A8F245FF98B00F48836 /* DeleteModel.swift in Sources */,
+				50359A80245FC8BF00F48836 /* ServiceInteractionHandler.swift in Sources */,
+				504A8659245EDB65000F720B /* Toast.swift in Sources */,
 				502993B6245ED35000ABB068 /* ViewController.swift in Sources */,
-				502993B2245ED35000ABB068 /* AppDelegate.swift in Sources */,
-				502993B4245ED35000ABB068 /* SceneDelegate.swift in Sources */,
+				50359A84245FC92B00F48836 /* ActivityIndicator.swift in Sources */,
+				502993CA245ED37800ABB068 /* SceneDelegate.swift in Sources */,
+				50359A82245FC8F000F48836 /* NetworkReachability.swift in Sources */,
+				50359A86245FC96300F48836 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XG9VTZMR8;
 				INFOPLIST_FILE = "API Master/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XG9VTZMR8;
 				INFOPLIST_FILE = "API Master/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
