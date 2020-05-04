@@ -22,6 +22,7 @@
 		50359A8D245FF63400F48836 /* PutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A8C245FF63400F48836 /* PutModel.swift */; };
 		50359A8F245FF98B00F48836 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50359A8E245FF98B00F48836 /* DeleteModel.swift */; };
 		504A8659245EDB65000F720B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A8658245EDB65000F720B /* Toast.swift */; };
+		50573CC22460594800EC718E /* ServiceInteractionHandler+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50573CC12460594800EC718E /* ServiceInteractionHandler+Extended.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		50359A8C245FF63400F48836 /* PutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutModel.swift; sourceTree = "<group>"; };
 		50359A8E245FF98B00F48836 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
 		504A8658245EDB65000F720B /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		50573CC12460594800EC718E /* ServiceInteractionHandler+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceInteractionHandler+Extended.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				50359A7F245FC8BF00F48836 /* ServiceInteractionHandler.swift */,
+				50573CC12460594800EC718E /* ServiceInteractionHandler+Extended.swift */,
 			);
 			path = Handler;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				50359A8B245FF59F00F48836 /* GetModel.swift in Sources */,
 				502993C9245ED37800ABB068 /* AppDelegate.swift in Sources */,
 				50359A8D245FF63400F48836 /* PutModel.swift in Sources */,
+				50573CC22460594800EC718E /* ServiceInteractionHandler+Extended.swift in Sources */,
 				50359A89245FF59400F48836 /* PostModel.swift in Sources */,
 				50359A8F245FF98B00F48836 /* DeleteModel.swift in Sources */,
 				50359A80245FC8BF00F48836 /* ServiceInteractionHandler.swift in Sources */,
