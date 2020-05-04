@@ -11,8 +11,6 @@ import UIKit
 //MARK: - View Controller - Initialization
 class ViewController: UIViewController {
 
-    let API_URL = "https://reqres.in/api/users"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +44,7 @@ extension ViewController  {
 
     func getAPICall() {
         
-        let urlString = API_URL
+        let urlString = Constants.URLs.API_URL
         let urlwithParameters = urlString + "?page=2"
 
         ServiceInteraction.getAPICallwithDataResponse(urlStringValue: urlwithParameters, callingVC: self, foregroundAPICall: true) { (responseData) in
@@ -79,7 +77,7 @@ extension ViewController {
     }
     func postAPICall(name:String,job:String) {
         
-        let urlString = API_URL
+        let urlString = Constants.URLs.API_URL
         let request = PostRequest(name: name, job: job)
         let parametersList = request.dictionary
 
@@ -115,7 +113,7 @@ extension ViewController {
     }
     func putAPICall(name:String,job:String) {
         
-        let urlString = API_URL
+        let urlString = Constants.URLs.API_URL
         let request = PutRequest(name: name, job: job)
         let parametersList = request.dictionary
 
@@ -150,7 +148,7 @@ extension ViewController {
     }
     func deleteAPICall(name:String,job:String) {
         
-        let urlString = API_URL
+        let urlString = Constants.URLs.API_URL
         let request = DeleteRequest(name: name, job: job)
         let parametersList = request.dictionary
 

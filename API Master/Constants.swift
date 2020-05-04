@@ -27,4 +27,8 @@ struct Constants {
         static let Dark:UIColor = .black
     }
     
+    struct URLs {
+        static let API_URL = "https://reqres.in/api/users"
+    }
+    
 }
