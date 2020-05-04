@@ -26,17 +26,16 @@ There is no specific configuration needed for this implementation.
 
 The Handler comes with a Network Handler and an Activity Indicator. It is packaged together to form the network layer.
 
-### GET
+### Generic Handler
 
 ```
-    //MARK: - Service Interaction - Get with Data
+    //MARK: - Service Interaction - Generic
     extension ServiceInteraction {
         
-        static func getAPICallwithDataResponse(urlStringValue:String,callingVC:UIViewController,foregroundAPICall:Bool,completionBlock: @escaping (Data) -> Void) -> Void
+        static func apiCall(urlString:String,callingVC:UIViewController,httpMethod:APIMethod,foregroundAPICall:Bool,parameters:Dictionary<String, String>?,completionBlock: @escaping (Data) -> Void) -> Void
         {
             
-            let urlString = URL(string: urlStringValue)
-            
+            //Internet Check and showing Activity Indicator
             if foregroundAPICall {
                 if !Reachability.isInternetAvailable(vc: callingVC) {
                     return
@@ -48,17 +47,27 @@ The Handler comes with a Network Handler and an Activity Indicator. It is packag
                 }
             }
             
+            let urlString = URL(string: urlString)
             var request = URLRequest(url: urlString!)
-            request.httpMethod = "GET"
+            request.httpMethod = httpMethod.description
+            
+            //Passing Parameter
+            if httpMethod != .GET {
+                if let param = parameters {
+                    request.httpBody = try? JSONSerialization.data(withJSONObject: param, options: [])
+                } else {
+                    Toast.showasync(message: "Pass Body Parameter", controller: callingVC)
+                }
+            }
             
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            
             //request.setValue(Constants.URLS.HEADER_VALUE, forHTTPHeaderField: Constants.URLS.HEADER_KEY)
             
+            //API Time Out
             let session = URLSession.shared
             session.configuration.timeoutIntervalForRequest = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
             session.configuration.timeoutIntervalForResource = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
+            
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                 
                 Loader.hide(vc: callingVC)
@@ -73,164 +82,33 @@ The Handler comes with a Network Handler and an Activity Indicator. It is packag
     }
 ```
 
-### POST
+### HTTP Method
 
 ```
-    //MARK: Service Interaction - Post with data
-    class ServiceInteraction {
+    //MARK: - HTTP Method
+    enum APIMethod {
         
-        static func postAPICallwithParametersData(urlStringValue:String,callingVC:UIViewController,foregroundAPICall:Bool,parameters:Dictionary<String, String>, completionBlock: @escaping (Data) -> Void) -> Void
-        {
-            
-            
-            let urlString = URL(string: urlStringValue)
-            var request = URLRequest(url: urlString!)
-            
-            if foregroundAPICall {
-                if !Reachability.isInternetAvailable(vc: callingVC) {
-                    return
-                }
-                Loader.show(vc: callingVC)
-            } else {
-                if !Reachability.isInternetAvailable() {
-                    return
-                }
-            }
-            
-            request.httpMethod = "POST"
-            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            //request.setValue(Constants.URLS.HEADER_VALUE, forHTTPHeaderField: Constants.URLS.HEADER_KEY)
-            
-            let session = URLSession.shared
-            session.configuration.timeoutIntervalForRequest = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
-            session.configuration.timeoutIntervalForResource = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
-
-            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-                
-                Loader.hide(vc: callingVC)
-                guard let data = data else {
-                    return
-                }
-                
-                completionBlock(data)
-                
-            })
-            
-            task.resume()
+        case GET
+        case POST
+        case PUT
+        case DELETE
+        
+        var description : String {
+         
+            switch self {
+          
+          case .GET: return "GET"
+          case .POST: return "POST"
+          case .PUT: return "PUT"
+          case .DELETE: return "DELETE"
+          }
             
         }
-    }
-```
-
-### PUT
-
-```
-    //MARK: - Servie Interaction - Put with Data
-    extension ServiceInteraction {
         
-        static func putAPICallwithParametersData(urlStringValue:String,callingVC:UIViewController,foregroundAPICall:Bool,parameters:Dictionary<String, String>, completionBlock: @escaping (Data) -> Void) -> Void
-        {
-            
-            
-            let urlString = URL(string: urlStringValue)
-            var request = URLRequest(url: urlString!)
-            
-            if foregroundAPICall {
-                if !Reachability.isInternetAvailable(vc: callingVC) {
-                    return
-                }
-                Loader.show(vc: callingVC)
-            } else {
-                if !Reachability.isInternetAvailable() {
-                    return
-                }
-            }
-            
-            request.httpMethod = "PUT"
-            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            //request.setValue(Constants.URLS.HEADER_VALUE, forHTTPHeaderField: Constants.URLS.HEADER_KEY)
-            
-            let session = URLSession.shared
-            session.configuration.timeoutIntervalForRequest = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
-            session.configuration.timeoutIntervalForResource = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
-
-            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-                
-                Loader.hide(vc: callingVC)
-                guard let data = data else {
-                    return
-                }
-                
-                completionBlock(data)
-                
-            })
-            
-            task.resume()
-            
-        }
-    }
-```
-
-### DELETE
-
-```
-    //MARK: - Servie Interaction - Delete with Data
-    extension ServiceInteraction {
-        
-        static func deleteAPICallwithParametersData(urlStringValue:String,callingVC:UIViewController,foregroundAPICall:Bool,parameters:Dictionary<String, String>, completionBlock: @escaping (Data) -> Void) -> Void
-        {
-            
-            
-            let urlString = URL(string: urlStringValue)
-            var request = URLRequest(url: urlString!)
-            
-            if foregroundAPICall {
-                if !Reachability.isInternetAvailable(vc: callingVC) {
-                    return
-                }
-                Loader.show(vc: callingVC)
-            } else {
-                if !Reachability.isInternetAvailable() {
-                    return
-                }
-            }
-            
-            request.httpMethod = "DELETE"
-            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            
-            //request.setValue(Constants.URLS.HEADER_VALUE, forHTTPHeaderField: Constants.URLS.HEADER_KEY)
-            
-            let session = URLSession.shared
-            session.configuration.timeoutIntervalForRequest = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
-            session.configuration.timeoutIntervalForResource = Constants.ApplicationGenerics.APIs.MINIMUM_TIMEOUT
-
-            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-                
-                Loader.hide(vc: callingVC)
-                guard let data = data else {
-                    return
-                }
-                
-                completionBlock(data)
-                
-            })
-            
-            task.resume()
-            
-        }
     }
 
 
 ```
-
-
-
 
 ---------------------------------------------------------------------------------------------------
 
@@ -243,6 +121,8 @@ The Handler comes with a Network Handler and an Activity Indicator. It is packag
 ## Usage Part
 
 ### You can see the Invoking part in each of the example given in the View Controller. 
+
+
 
 
 ### Check out my Post about API-Master : [API-Master](https://vijaysn.com/2020/04/23/ios-av-player/)

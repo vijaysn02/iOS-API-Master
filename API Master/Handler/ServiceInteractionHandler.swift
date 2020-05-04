@@ -71,13 +71,15 @@ enum APIMethod {
     case DELETE
     
     var description : String {
-      switch self {
+     
+        switch self {
       
       case .GET: return "GET"
       case .POST: return "POST"
       case .PUT: return "PUT"
       case .DELETE: return "DELETE"
       }
+        
     }
     
 }
