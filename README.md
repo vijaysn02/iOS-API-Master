@@ -24,7 +24,7 @@ There is no specific configuration needed for this implementation.
 
 ## Coding Part - Handler:
 
-The Handler comes with a Network Handler and an Activity Indicator. It is packaged together to form the network layer.
+The Handler comes with a Network Handler and an Activity Indicator. It is packaged together to form the API layer.
 
 ### Generic Handler
 
@@ -125,4 +125,4 @@ The Handler comes with a Network Handler and an Activity Indicator. It is packag
 
 
 
-### Check out my Post about API-Master : [API-Master](https://vijaysn.com/2020/04/23/ios-av-player/)
+### Check out my Post about API-Master : [API Layer](https://vijaysn.com/mobile/ios/ios-api-layer)
